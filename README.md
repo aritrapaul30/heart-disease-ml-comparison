@@ -152,12 +152,12 @@ Six algorithms selected to represent a **full spectrum of learning strategies**:
 
 | Model | Key Tuned Parameters | Notable Change |
 |---|---|---|
-| Gradient Boosting | `learning_rate=0.05`, `n_estimators=100`, `max_depth=3` | Halved learning rate — prevents aggressive over-correction on 917 patients |
-| Random Forest | `n_estimators=100`, `max_depth=15`, `min_samples_leaf=2` | Depth cap + leaf minimum — prevents memorisation |
-| Logistic Regression | `C=0.01`, `solver=lbfgs` | Most aggressive regularisation — keeps coefficients stable |
-| SVM | `C=1`, `kernel=linear`, `gamma=scale` | Switched RBF → Linear — flat hyperplane generalises equally well |
-| MLP Neural Network | `hidden_layer_sizes=(128, 64)`, `activation=relu`, `alpha=0.0001` | Widened first layer (64→128) — more capacity for 15 features |
-| Naive Bayes | `var_smoothing=1e-5` | 4 orders of magnitude above default — stabilises near-zero within-class variances |
+| Gradient Boosting | `learning_rate=0.05`, `n_estimators=100`, `max_depth=3` | Halved learning rate - prevents aggressive over-correction on 917 patients |
+| Random Forest | `n_estimators=100`, `max_depth=15`, `min_samples_leaf=2` | Depth cap + leaf minimum - prevents memorisation |
+| Logistic Regression | `C=0.01`, `solver=lbfgs` | Most aggressive regularisation - keeps coefficients stable |
+| SVM | `C=1`, `kernel=linear`, `gamma=scale` | Switched RBF → Linear - flat hyperplane generalises equally well |
+| MLP Neural Network | `hidden_layer_sizes=(128, 64)`, `activation=relu`, `alpha=0.0001` | Widened first layer (64→128) - more capacity for 15 features |
+| Naive Bayes | `var_smoothing=1e-5` | 4 orders of magnitude above default - stabilises near-zero within-class variances |
 
 ---
 
@@ -204,7 +204,7 @@ Both **paired t-tests** and **McNemar's tests** were run across all 15 pairwise 
 
 > **Result: No pairwise comparison reached p < 0.05.**
 
-All performance differences are **statistically non-significant** — confirming that on structured clinical tabular data at this scale, **feature quality governs the performance ceiling more than algorithmic complexity.**
+All performance differences are **statistically non-significant** - confirming that on structured clinical tabular data at this scale, **feature quality governs the performance ceiling more than algorithmic complexity.**
 
 ---
 
@@ -233,7 +233,7 @@ Consistent top predictors across Gradient Boosting, Random Forest, and Logistic 
 Despite Gradient Boosting's marginal numerical lead, **Logistic Regression is the most operationally compelling candidate**:
 
 - Equivalent predictive performance (Acc: 0.8636, F1: 0.8795, AUC: 0.9222)
-- **Full coefficient-level interpretability** — clinicians can understand *why* a patient is flagged
+- **Full coefficient-level interpretability** - clinicians can understand *why* a patient is flagged
 - No overfitting (train vs CV gap: 0.22%)
 - Aligns with growing **regulatory and clinical governance requirements** for explainable medical AI
 
