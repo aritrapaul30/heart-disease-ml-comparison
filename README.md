@@ -4,9 +4,9 @@
 
 ## 📌 Project Overview
 
-Cardiovascular disease is the **leading cause of global mortality**, responsible for approximately **17.9 million deaths annually** (WHO, 2024). A critical clinical challenge is that many patients deteriorate silently — physiological markers decline without triggering standard diagnostic flags, leaving preventable cardiac events undetected.
+Cardiovascular disease is the **leading cause of global mortality**, responsible for approximately **17.9 million deaths annually** (WHO, 2024). A critical clinical challenge is that many patients deteriorate silently, physiological markers decline without triggering standard diagnostic flags, leaving preventable cardiac events undetected.
 
-This project builds and systematically compares **six machine learning classifiers** for **binary heart disease prediction**, using a single consolidated clinical dataset drawn from five independent cardiovascular databases. The goal: determine whether algorithmic complexity actually drives predictive performance on structured clinical tabular data — or whether **feature quality is the real ceiling**.
+This project builds and systematically compares **six machine learning classifiers** for **binary heart disease prediction**, using a single consolidated clinical dataset drawn from five independent cardiovascular databases. The goal: determine whether algorithmic complexity actually drives predictive performance on structured clinical tabular data or whether **feature quality is the real ceiling**.
 
 ---
 
