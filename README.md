@@ -1,4 +1,4 @@
-# 🫀 Heart Disease Classification — A Systematic ML Comparison
+# 🫀 Heart Disease Classification: A Systematic ML Comparison
 
 ---
 
