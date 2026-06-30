@@ -17,8 +17,8 @@ This project builds and systematically compares **six machine learning classifie
 | **Source** | [Heart Failure Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction) — Fedesoriano (2021) |
 | **Records** | 918 raw → **917 after cleaning** (1 removed: RestingBP = 0, physiologically impossible) |
 | **Features** | 11 clinical input features → **15 after one-hot encoding** |
-| **Target** | `HeartDisease` — binary (1 = disease, 0 = no disease) |
-| **Class Balance** | 507 positive (55.3%) · 410 negative (44.7%) — mild 55:45 imbalance |
+| **Target** | `HeartDisease` - binary (1 = disease, 0 = no disease) |
+| **Class Balance** | 507 positive (55.3%) · 410 negative (44.7%) - mild 55:45 imbalance |
 | **Source Databases** | Cleveland · Hungary · Switzerland · Long Beach VA · Statlog |
 
 ### 🔬 Clinical Features
@@ -39,7 +39,7 @@ This project builds and systematically compares **six machine learning classifie
 
 ---
 
-## 📊 Exploratory Data Analysis — Key Findings
+## 📊 Exploratory Data Analysis- Key Findings
 
 ### Age Group Risk Profile
 
@@ -50,7 +50,7 @@ This project builds and systematically compares **six machine learning classifie
 | 50–59 | 56.6% | 373 |
 | 60+ | **73.1%** | 253 |
 
-> ⚠️ Even the youngest cohort (under 40) carries a **32.5% disease rate** — reinforcing that clinical monitoring cannot be deferred to late middle age.
+> ⚠️ Even the youngest cohort (under 40) carries a **32.5% disease rate** - reinforcing that clinical monitoring cannot be deferred to late middle age.
 
 ### Top Predictors (Point-Biserial Correlation with HeartDisease)
 
@@ -72,7 +72,7 @@ The interaction between `STSlope` and `Oldpeak` produces a **near-definitive dis
 | Flat | 0.55 | **1.57** |
 | Down | 0.89 | **2.37** |
 
-This is why tree-based models excel — they capture **conditional feature importance** that a linear boundary cannot express.
+This is why tree-based models excel - they capture **conditional feature importance** that a linear boundary cannot express.
 
 ---
 
@@ -81,7 +81,7 @@ This is why tree-based models excel — they capture **conditional feature impor
 ### 1. Data Cleaning
 - Removed **1 record** with `RestingBP = 0` (physiologically impossible) → 917 records retained
 
-### 2. Cholesterol Imputation — KNN vs 5 Alternatives
+### 2. Cholesterol Imputation - KNN vs 5 Alternatives
 
 171 zero-coded Cholesterol values (18.6% of the dataset) required imputation. Six strategies were benchmarked under 10-fold CV using a Random Forest:
 
@@ -96,16 +96,16 @@ This is why tree-based models excel — they capture **conditional feature impor
 
 **Selected: KNN (k=5), target excluded.** Reasons:
 - ✅ Best F1 among clinically valid (fair) methods
-- ✅ Preserves ~85% of original Cholesterol–HeartDisease class gap
+- ✅ Preserves ~85% of original Cholesterol-HeartDisease class gap
 - ✅ Generates **139 unique personalised values** (not one flat estimate)
-- ✅ Mirrors real clinical reasoning — find 5 most similar patients by features, average their cholesterol
-- ✅ No data leakage — target excluded from neighbour search
+- ✅ Mirrors real clinical reasoning - find 5 most similar patients by features, average their cholesterol
+- ✅ No data leakage - target excluded from neighbour search
 
-> Post-imputation: Mean = 245.0 mg/dL, SD = 54.7 (vs. pre-imputation: Mean = 244.6, SD = 59.2) — distribution shape preserved.
+> Post-imputation: Mean = 245.0 mg/dL, SD = 54.7 (vs. pre-imputation: Mean = 244.6, SD = 59.2) - distribution shape preserved.
 
 ### 3. Outlier Retention
 
-IQR screening flagged outliers but **all were retained** — extreme clinical readings (e.g., BP = 170, Cholesterol > 400) are statistically unusual but clinically meaningful in a cardiac population.
+IQR screening flagged outliers but **all were retained** 0 extreme clinical readings (e.g., BP = 170, Cholesterol > 400) are statistically unusual but clinically meaningful in a cardiac population.
 
 | Feature | Flagged Outliers |
 |---|---|
@@ -116,7 +116,7 @@ IQR screening flagged outliers but **all were retained** — extreme clinical re
 
 ### 4. Multicollinearity Check (VIF)
 
-All numeric features returned VIF well below the threshold of 5 — no features dropped:
+All numeric features returned VIF well below the threshold of 5 - no features dropped:
 
 | Feature | VIF | Status |
 |---|---|---|
@@ -128,7 +128,7 @@ All numeric features returned VIF well below the threshold of 5 — no features 
 
 ### 5. Encoding & Scaling
 - **One-hot encoding** (`drop_first=True`) expanded features from **11 → 15**
-- **StandardScaler** applied inside `sklearn.Pipeline` for SVM, Logistic Regression, and MLP — **fitted on training fold only** (no leakage)
+- **StandardScaler** applied inside `sklearn.Pipeline` for SVM, Logistic Regression, and MLP - **fitted on training fold only** (no leakage)
 - Tree-based models (Gradient Boosting, Random Forest) and Naive Bayes received **no scaling** (scale-invariant)
 
 ---
@@ -257,9 +257,7 @@ Despite Gradient Boosting's marginal numerical lead, **Logistic Regression is th
 ## 📬 Contact
 
 **Aritra Paul** — Master of Business Analytics, Sunway University  
-📧 25049008@imail.sunway.edu.my  
+📧 aritrapaul30@gmail.com 
 🔗 [GitHub](https://github.com/aritrapaul30)
 
 ---
-
-*BAA5073 Data Mining — Assignment submitted April 28, 2026*
