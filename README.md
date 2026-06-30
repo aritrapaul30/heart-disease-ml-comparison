@@ -256,7 +256,7 @@ Despite Gradient Boosting's marginal numerical lead, **Logistic Regression is th
 
 ## 📬 Contact
 
-**Aritra Paul** — Master of Business Analytics, Sunway University  
+**Aritra Paul**  Master of Business Analytics, Sunway University  
 📧 aritrapaul30@gmail.com 
 🔗 [GitHub](https://github.com/aritrapaul30)
 
